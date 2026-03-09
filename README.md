@@ -6,10 +6,10 @@ Built a production-ready tweet sentiment classifier that actually works on real,
 
 Everything you need is in this repo:
 
-Live 30-second demo (improvements.py)
-Deployable model (sentiment_model.pkl - 40KB)
-Full reproducible pipeline
-Visual proof (confusion matrix + error analysis)
+Live 30-second demo (improvements.py)  
+Deployable model (sentiment_model.pkl - 40KB)  
+Full reproducible pipeline  
+Visual proof (confusion matrix + error analysis)  
 
 ## 1. The Problem I Solved
 Social media text = complete chaos. Here's what real tweets look like:
