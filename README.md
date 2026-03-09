@@ -1,4 +1,4 @@
-NLP Noise Reduction - Tweet Sentiment Analysis
+#NLP Noise Reduction - Tweet Sentiment Analysis
 Real-world classifier that handles messy social media data
 
 Executive Summary
@@ -11,7 +11,7 @@ Deployable model (sentiment_model.pkl - 40KB)
 Full reproducible pipeline
 Visual proof (confusion matrix + error analysis)
 
-1. The Problem I Solved
+*1. The Problem I Solved
 Social media text = complete chaos. Here's what real tweets look like:
 
 "great service! love waiting 3 hours 🙄🔥" 
@@ -46,7 +46,6 @@ True Negatives: 795/2148 (37.0%)
 
 4. Sample output:
 NLP SENTIMENT ANALYSIS (75.5% Test Accuracy)
-______________________________________________
 1. 'Great service! Love waiting 3 hours 🙄' → POSITIVE (77%)
 2. 'Total garbage, hate this app' → NEGATIVE (87%)
 3. 'battery dead again, phone sucks' → NEGATIVE (97%)
@@ -59,8 +58,7 @@ python
 import joblib
 model = joblib.load('sentiment_model.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
-
-# New tweet
+________________________________________________________________
 text = "love this app so much!"
 features = vectorizer.transform([text])
 prediction = model.predict(features)  # 0=negative, 4=positive
@@ -90,20 +88,17 @@ Train: 90K tweets
 Test: 9,943 tweets
 Labels: 0=negative, 4=positive
 Preprocessing (clean_text.py)
-text
 URLs → [URL]
 @mentions → [USER]  
 Emojis → :thumbsup: → "positive"
 Hashtags → #awesome → awesome
 Lowercase + strip whitespace
 Model
-text
 Algorithm: Logistic Regression (scikit-learn)
 Features: TF-IDF top 5000 words
 C=1.0, max_iter=1000
 File size: 40KB pickle
 Environment
-text
 Python 3.10+
 scikit-learn==1.5.1
 pandas==2.2.2
@@ -125,7 +120,7 @@ Priority 3: Recent tweets (2026 slang)
 Priority 4: Active learning loop
 Priority 5: Multi-language support
 
-11. Files in Repo (22 total):
+10. Files in Repo (22 total):
 📊 confusion_matrix.png - Visual proof
 📈 error_types_pie.png - Error breakdown
 ⚡ improvements.py - Live demo  
