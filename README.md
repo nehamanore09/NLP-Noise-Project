@@ -1,4 +1,5 @@
-#NLP Noise Reduction - Tweet Sentiment Analysis
+#NLP Noise Reduction - Tweet Sentiment Analysis#
+_________________________________________________________________
 Real-world classifier that handles messy social media data
 
 Executive Summary
@@ -58,7 +59,7 @@ python
 import joblib
 model = joblib.load('sentiment_model.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
-________________________________________________________________
+
 text = "love this app so much!"
 features = vectorizer.transform([text])
 prediction = model.predict(features)  # 0=negative, 4=positive
