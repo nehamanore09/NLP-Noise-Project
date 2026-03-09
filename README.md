@@ -18,16 +18,19 @@ Social media text = complete chaos. Here's what real tweets look like:
 
 My Solution - End-to-End Pipeline  
 1.6M raw tweets (sentiment140.zip 84MB)  
-       ↓  
+               ↓  
        clean_text.py  
+       
 Cleaned tweets (tweets_final.csv 6MB)  
-       ↓  
+               ↓  
        tfidf_vectorizer.py  
+       
 TF-IDF 5000 features  
-       ↓  
-       train_classifier.py  
+               ↓  
+       train_classifier.py 
+       
 Logistic Regression → 75.5% accuracy  
-       ↓  
+              ↓  
        sentiment_model.pkl (40KB)  
 PRODUCTION READY ✅
 
