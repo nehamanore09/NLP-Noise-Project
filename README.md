@@ -1,8 +1,8 @@
-#NLP Noise Reduction - Tweet Sentiment Analysis#
+# NLP Noise Reduction - Tweet Sentiment Analysis
 _________________________________________________________________
 Real-world classifier that handles messy social media data
 
-Executive Summary
+## Executive Summary
 Built a production-ready tweet sentiment classifier that actually works on real, messy social media data. Most models fail miserably on tweets with emojis 🙄, broken URLs, typos, @mentions, and sarcasm. Mine achieves 75.5% test accuracy on 9,943 real tweets from the Sentiment140 dataset (1.6M total).
 
 Everything you need is in this repo:
@@ -12,7 +12,7 @@ Deployable model (sentiment_model.pkl - 40KB)
 Full reproducible pipeline
 Visual proof (confusion matrix + error analysis)
 
-*1. The Problem I Solved
+## 1. The Problem I Solved
 Social media text = complete chaos. Here's what real tweets look like:
 
 "great service! love waiting 3 hours 🙄🔥" 
@@ -31,7 +31,7 @@ Logistic Regression → 75.5% accuracy
 PRODUCTION READY ✅
 
 
-2. Key Result:
+## 2. Key Result:
 
 | Metric             | Value | Notes              |
 | ------------------ | ----- | ------------------ |
@@ -41,18 +41,18 @@ PRODUCTION READY ✅
 | Total Errors       | 2,441 | Analyzed every one |
 | Sarcasm Errors     | 16%   | Expected           |
 
-3. Confusion Matrix:
+## 3. Confusion Matrix:
 True Positives: 3707/3795 (97.7%)
 True Negatives: 795/2148 (37.0%)
 
-4. Sample output:
+## 4. Sample output:
 NLP SENTIMENT ANALYSIS (75.5% Test Accuracy)
 1. 'Great service! Love waiting 3 hours 🙄' → POSITIVE (77%)
 2. 'Total garbage, hate this app' → NEGATIVE (87%)
 3. 'battery dead again, phone sucks' → NEGATIVE (97%)
 4. 'OMG best update ever 🎉' → POSITIVE (92%)
 
-5. Production Deployment
+## 5. Production Deployment
 Ready for ANY platform:
 
 python
@@ -71,7 +71,7 @@ Files included:
 ✅ confusion_matrix.png (proof)
 ✅ error_types_pie.png (analysis)
 
-6. Deep Error Analysis (2441 cases):
+## 6. Deep Error Analysis (2441 cases):
 I manually categorized every single error:
 
 Mixed sentiment (52%) - "Great app but crashes sometimes"
@@ -81,7 +81,7 @@ Rare slang (9%) - "sus", "cap", "mid"
 Numbers (11%) - "Order #12345 shipped!"
 Key insight: Sarcasm detection needs contextual understanding (BERT territory).
 
-7. Technical Implementation
+## 7. Technical Implementation
 Data
 text
 Dataset: Sentiment140 (1.6M tweets, 2009)
@@ -106,7 +106,7 @@ pandas==2.2.2
 numpy==1.26.4
 joblib==1.4.2
 
-8. What I Learned (The Hard Way)
+## 8. What I Learned (The Hard Way)
 Real data preparation = 80% of the work
 Sarcasm kills every sentiment model (16% error = normal)
 TF-IDF beat word embeddings on short messy text
@@ -114,14 +114,14 @@ Error analysis revealed true weaknesses
 Production ≠ Jupyter notebook (pickles, not plots)
 Biggest surprise: Simple token replacement handled emojis/URLs shockingly well.
 
-9. Future Work:
+## 9. Future Work:
 Priority 1: BERT fine-tuning (sarcasm fix)
 Priority 2: Add neutral class  
 Priority 3: Recent tweets (2026 slang)
 Priority 4: Active learning loop
 Priority 5: Multi-language support
 
-10. Files in Repo (22 total):
+## 10. Files in Repo (22 total):
 📊 confusion_matrix.png - Visual proof
 📈 error_types_pie.png - Error breakdown
 ⚡ improvements.py - Live demo  
