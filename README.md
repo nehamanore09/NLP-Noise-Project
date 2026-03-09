@@ -1,6 +1,5 @@
 # NLP Noise Reduction - Tweet Sentiment Analysis
-_________________________________________________________________
-Real-world classifier that handles messy social media data
+### Real-world classifier that handles messy social media data
 
 ## Executive Summary
 Built a production-ready tweet sentiment classifier that actually works on real, messy social media data. Most models fail miserably on tweets with emojis 🙄, broken URLs, typos, @mentions, and sarcasm. Mine achieves 75.5% test accuracy on 9,943 real tweets from the Sentiment140 dataset (1.6M total).
