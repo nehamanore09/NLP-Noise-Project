@@ -4,8 +4,7 @@
 ## Executive Summary
 Built a production-ready tweet sentiment classifier that actually works on real, messy social media data. Most models fail miserably on tweets with emojis 🙄, broken URLs, typos, @mentions, and sarcasm. Mine achieves 75.5% test accuracy on 9,943 real tweets from the Sentiment140 dataset (1.6M total).
 
-Everything you need is in this repo:
-
+### Everything you need is in this repo:
 Live 30-second demo (improvements.py)  
 Deployable model (sentiment_model.pkl - 40KB)  
 Full reproducible pipeline  
@@ -19,13 +18,17 @@ Social media text = complete chaos. Here's what real tweets look like:
 
 My Solution - End-to-End Pipeline  
 1.6M raw tweets (sentiment140.zip 84MB)  
-       ↓ clean_text.py  
+       ↓  
+       clean_text.py  
 Cleaned tweets (tweets_final.csv 6MB)  
-       ↓ tfidf_vectorizer.py  
+       ↓  
+       tfidf_vectorizer.py  
 TF-IDF 5000 features  
-       ↓ train_classifier.py  
+       ↓  
+       train_classifier.py  
 Logistic Regression → 75.5% accuracy  
-       ↓ sentiment_model.pkl (40KB)  
+       ↓  
+       sentiment_model.pkl (40KB)  
 PRODUCTION READY ✅
 
 
@@ -78,8 +81,7 @@ Numbers (11%) - "Order #12345 shipped!"
 Key insight: Sarcasm detection needs contextual understanding (BERT territory).
 
 ## 7. Technical Implementation
-Data  
-text  
+Data   
 Dataset: Sentiment140 (1.6M tweets, 2009)  
 Train: 90K tweets    
 Test: 9,943 tweets  
